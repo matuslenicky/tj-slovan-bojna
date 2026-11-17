@@ -1,0 +1,128 @@
+/* TJ Slovan Bojná – „Dátová tabuľa“. Biela, čierna a modrá z klubových farieb, červená len pri prehre. */
+:root {
+  --bg: #fff; --paper: #fff; --ink: #121722; --muted: #5a6170; --line: #e3e6ec; --grey: #f4f5f8;
+  --blue: #173b7a; --blue-l: #e8eef8; --red: #b4232c; --focus: #173b7a; --link: #173b7a;
+  --mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+  --disp: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+  --text: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
+  --text-size: 1.0313rem; --lh: 1.6;
+  --menu-bg: #121722; --menu-ink: #fff;
+}
+.h1, .h2, .h3, .brand-n, .cells b, .teams-n, .stat b, .mc-mid { font-family: var(--mono); font-weight: 600; letter-spacing: -.01em; }
+.h1 { font-size: clamp(1.7rem, 4.6vw, 2.6rem); line-height: 1.1; }
+.h1 span { display: block; margin-top: 6px; font-size: .9375rem; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+.h2 { font-size: clamp(1.3rem, 3vw, 1.6rem); line-height: 1.2; }
+.h3 { font-size: .8125rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); padding-bottom: 8px; border-bottom: 2px solid var(--ink); margin-bottom: 4px; }
+.h3--gap { margin-top: 32px; }
+.h4 { font-weight: 600; }
+.kicker, .cells dt, .fx-d, .fx-k, .tbl thead th, .log-y, .kv dt, .crew-r { font-family: var(--mono); }
+.kicker { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.more { margin-top: 8px; font: 500 .875rem/1.2 var(--mono); color: var(--blue); }
+.more .i { width: 15px; height: 15px; }
+.btn { background: var(--ink); color: #fff; font: 500 .9375rem/1.2 var(--mono); }
+.btn:hover { background: var(--blue); }
+.btn--line { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn--line:hover { background: var(--ink); color: #fff; }
+
+/* hlavička: úzka a hustá */
+.hdr { background: var(--ink); color: #fff; }
+.hdr-in { min-height: 58px; }
+.brand img { height: 36px; }
+.brand-n { font-size: 1.05rem; }
+.brand-s { font: 500 .75rem/1.2 var(--mono); color: #aab2c4; }
+.nav a { padding: 0 12px; color: #fff; font: 500 .9375rem/1 var(--mono); }
+.nav a:hover { background: #2a3142; }
+.nav a[aria-current="page"] { background: #fff; color: var(--ink); }
+.hdr :focus-visible { outline-color: #8fb3ff; }
+.menu-btn { background: #fff; color: var(--ink); border: 0; font: 500 .9375rem/1 var(--mono); }
+.menu-k { font: 600 1rem/1.2 var(--mono); }
+.menu-nav a { font: 600 1.7rem/1.1 var(--mono); border-bottom: 1px solid #2a3142; }
+.menu-nav a[aria-current="page"]::before { content: '> '; color: #8fb3ff; }
+.menu :focus-visible { outline-color: #8fb3ff; }
+.menu-x { font-family: var(--mono); }
+
+/* pás s údajmi áčka */
+.board-top { padding: 28px 0 0; }
+.cells { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 22px; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); }
+.cell { padding: 14px 14px 14px 0; border-bottom: 1px solid var(--line); }
+.cell:nth-child(2n) { padding-left: 14px; border-left: 1px solid var(--line); }
+.cells dt { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.cells dd { margin-top: 4px; display: flex; flex-direction: column; }
+.cells b { font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1; }
+.cells dd span { margin-top: 4px; font: 500 .8125rem/1.3 var(--mono); color: var(--muted); }
+.cell--form { grid-column: 1 / -1; padding-left: 0 !important; border-left: 0 !important; }
+.cell--form .form { margin: 6px 0 0; }
+.cell--next { grid-column: 1 / -1; padding-left: 0 !important; border-left: 0 !important; }
+.cell--next a { display: flex; flex-direction: column; text-decoration: none; color: var(--ink); min-height: 44px; }
+.cell--next b { font-size: 1.25rem; line-height: 1.2; }
+@media (min-width: 900px) {
+  .cells { grid-template-columns: 120px 120px 150px minmax(0, 1fr) minmax(0, 1.4fr); border-bottom: 0; }
+  .cell, .cell:nth-child(2n), .cell--form, .cell--next { grid-column: auto; padding: 16px 18px; border-bottom: 0; border-left: 1px solid var(--line) !important; }
+  .cell:first-child { padding-left: 0; border-left: 0 !important; }
+}
+.board-note { margin-top: 12px; font: 500 .8125rem/1.4 var(--mono); color: var(--muted); }
+.board-in { display: grid; gap: 40px; }
+.board-in > * { min-width: 0; }
+@media (min-width: 1000px) { .board-in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; } }
+.sec--grey { background: var(--grey); }
+
+/* zápasy ako hustá tabuľa */
+.fx { border-bottom: 1px solid var(--line); }
+.fx-a { grid-template-columns: 62px minmax(0, 1fr) auto; min-height: 50px; padding: 5px 0; gap: 12px; }
+.fx-d { font-size: .8125rem; font-weight: 500; }
+.fx-dd { color: var(--muted); }
+.fx-on { font-weight: 600; font-size: 1rem; line-height: 1.25; }
+.fx-k { font-size: .75rem; }
+.fx-t { font: 500 .9375rem/1 var(--mono); }
+.sc { font: 600 .9375rem/1 var(--mono); min-width: 48px; padding: 5px 7px; }
+.sc--w { background: var(--blue); color: #fff; }
+.sc--d { background: var(--blue-l); color: var(--blue); }
+.sc--l { color: var(--red); box-shadow: inset 0 0 0 1px #efc6c9; }
+.sc--n { color: var(--muted); font-size: .8125rem; }
+.month-h { font: 600 .8125rem/1.3 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--ink); padding-bottom: 6px; }
+.form li { width: 28px; height: 28px; font: 600 .8125rem/1 var(--mono); background: var(--grey); box-shadow: inset 0 0 0 1px var(--line); }
+.form--w { background: var(--blue) !important; color: #fff; box-shadow: none !important; }
+.form--l { color: var(--red); }
+.tbl { font: 500 .875rem/1.35 var(--mono); }
+.tbl thead th { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid var(--ink); }
+.tbl tbody tr { border-bottom: 1px solid var(--line); }
+.tbl tbody th { font: 400 .9688rem/1.3 var(--text); }
+.tbl tr.our { background: var(--blue-l); }
+.tbl tr.our th, .tbl tr.our td { font-weight: 600; color: var(--blue); }
+.tbl--teams th a { font-weight: 600; color: var(--ink); }
+.tbl--teams small, .tbl--teams td small { display: block; font: 500 .75rem/1.3 var(--mono); color: var(--muted); }
+.toc a { box-shadow: inset 0 0 0 1px var(--ink); color: var(--ink); font-family: var(--mono); }
+
+/* podstránky */
+.phead { padding: 28px 0 22px; border-bottom: 2px solid var(--ink); }
+.phead .h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); }
+.mc { padding: 20px 18px 16px; border: 1px solid var(--line); }
+.mc-label { font-family: var(--mono); color: var(--blue); }
+.mc-mid { font-size: 2.6rem; }
+.mc-name { font-weight: 600; }
+.chip { border: 0; background: var(--grey); color: var(--ink); font: 500 .9375rem/1 var(--mono); box-shadow: inset 0 0 0 1px var(--line); }
+.chip[aria-pressed="true"] { background: var(--ink); color: #fff; box-shadow: none; }
+.teams a { border-bottom: 1px solid var(--line); }
+.teams-n { font-size: 1.4rem; }
+.teams-s { font-weight: 600; }
+.teams-p { font-family: var(--mono); font-size: .875rem; }
+.join { background: var(--grey); }
+.stat b { font-size: 2rem; }
+.contact-mail { font: 600 clamp(1.2rem, 4vw, 1.9rem)/1.2 var(--mono); }
+.log { list-style: none; margin: 0; padding: 0; }
+.log li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.log-y { font-size: .8125rem; font-weight: 600; color: var(--blue); }
+.log b { display: block; margin-bottom: 2px; }
+.log--s li { grid-template-columns: 120px minmax(0, 1fr); }
+@media (max-width: 519.98px) { .log li { grid-template-columns: 1fr; gap: 2px; } }
+.kv dt { font-size: .8125rem; color: var(--blue); }
+
+/* päta */
+.ftr { background: var(--ink); color: #c9cfdb; }
+.ftr a { color: #fff; }
+.ftr-name { font: 600 1.05rem/1.2 var(--mono); color: #fff; }
+.ftr :focus-visible { outline-color: #8fb3ff; }
+.ftr-src { color: #aab2c4; font-family: var(--mono); font-size: .8125rem; }
+.ftr-bar { border-top: 1px solid #2a3142; color: #aab2c4; font-family: var(--mono); font-size: .8125rem; }
+.demo { background: var(--blue); color: #fff; font-family: var(--mono); }
+.tbl--teams th a { display: inline-block; padding: 6px 0; min-height: 32px; }

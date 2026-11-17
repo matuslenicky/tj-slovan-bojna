@@ -6,16 +6,14 @@ Ukážka: https://matuslenicky.github.io/tj-slovan-bojna/ · administrácia (uk�
 
 ## Vzhľad
 
-**„Valy“.** V Bojnej stálo veľkomoravské hradisko Valy, známe pozlátenými plaketami z prenosného oltára s prvými latinskými nápismi u Slovanov a zvonom z 9. storočia. Web je postavený ako terénna dokumentácia archeológa:
+**„Dátová tabuľa“ (dizajn v2, 17. 11. 2026).** Biela, čierna a modrá z klubových farieb, červená len pri prehre. Písmo IBM Plex Mono (čísla, popisy) a IBM Plex Serif (text).
 
-- úvod ako **archeologický plán so schematickými vrstevnicami valov** (SVG, súradnicová sieť, mierka, sever), pod ním profil valu,
-- plochy z **milimetrového papiera**, údaje (dátumy, časy, súťaže) písmom Red Hat Mono ako v teréne,
-- program ako **terénny denník so špendlíkmi** (plný = doma, prázdny = vonku),
-- výsledky ako **kovové plakety s nitmi**: výhra zlatá, remíza strieborná, prehra bronzová; forma ako rad malých plakiet,
-- **„Dve zlaté plakety“** za tituly dorastu U19 a žiakov U15 v ročníku 2024/25,
-- história klubu ako **stratigrafia**: vrstvy pôdy od prvej lopty po postup do VI. ligy, vedľa červeno-biela meračská tyč,
-- menu na telefóne ako **plán s vrstevnicami, ktorý sa rozvinie kruhom** od tlačidla,
-- farby z erbu (modrá, svetlomodrá, červená, biela), písmo **Cinzel** (tesané kapitálky ako na nápisoch), **Red Hat Text** a **Red Hat Mono**.
+- úvod stojí na číslach: pás s údajmi áčka (miesto, body, skóre, forma, najbližší zápas), pod ním husté tabuľky výsledkov, programu a celej ligy vedľa seba,
+- prehľad všetkých tímov v jednej tabuľke (súťaž, miesto, posledný výsledok),
+- stránka Klub: história po vrstvách (od prvej lopty po Lazňu), ročníky áčka, úspechy, štadión, mládež 2025 a obec,
+- menu na telefóne je tmavá plocha cez celú obrazovku.
+
+Web sa skladá zo spoločného jadra v2 (`kluby-siet/engine`: `python assemble.py <web>`), vlastný je `src/site.js` (úvod, Klub, nastavenia) a `src/css/skin.css`.
 
 ## Obsah a zdroje
 
