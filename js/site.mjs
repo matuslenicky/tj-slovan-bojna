@@ -22,7 +22,7 @@ const plural = (n, a, b, c) => `${n} ${n === 1 ? a : n >= 2 && n <= 4 ? b : c}`;
 function tick() {
   for (const el of $$('.cd[data-kickoff]')) {
     const ms = Date.parse(el.dataset.kickoff) - Date.now();
-    if (Number.isNaN(ms)) continue;
+    if (Number.isNaN(ms) || ms > 14 * 864e5) { el.hidden = true; continue; }
     el.hidden = false;
     if (ms <= 0) { el.textContent = ms > -105 * 60e3 ? 'Práve sa hrá' : 'Zápas sa skončil, výsledok čoskoro'; continue; }
     const d = Math.floor(ms / 864e5), h = Math.floor((ms % 864e5) / 36e5), m = Math.floor((ms % 36e5) / 6e4);
@@ -78,3 +78,23 @@ document.addEventListener('keydown', (e) => {
   if (e.key !== 'Escape') return;
   $$('[data-cal][open]').forEach((d) => { d.open = false; $('summary', d).focus(); });
 });
+
+// ---- záložky (data-tabs): bez JS sú všetky panely pod sebou, s JS jeden panel a ovládanie šípkami ----
+for (const box of $$('[data-tabs]')) {
+  const tabs = $$('[role="tab"]', box), panels = $$('[role="tabpanel"]', box);
+  if (!tabs.length || tabs.length !== panels.length) continue;
+  const pick = (i, focus) => {
+    tabs.forEach((t, j) => { t.setAttribute('aria-selected', String(i === j)); t.tabIndex = i === j ? 0 : -1; panels[j].hidden = i !== j; });
+    if (focus) tabs[i].focus();
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => pick(i));
+    t.addEventListener('keydown', (e) => {
+      const last = tabs.length - 1;
+      const to = { ArrowRight: i === last ? 0 : i + 1, ArrowLeft: i === 0 ? last : i - 1, Home: 0, End: last }[e.key];
+      if (to !== undefined) { e.preventDefault(); pick(to, true); }
+    });
+  });
+  box.classList.add('tabs-on');
+  pick(0);
+}
