@@ -267,7 +267,7 @@ a.lg:hover .lg-o { text-decoration: underline; }
 .pq--n { background: #6d7178; color: #fff; outline-color: rgba(255, 255, 255, .3); }
 .pq-s { font: 800 1.9rem/1 var(--cap); white-space: nowrap; }
 .pq-o { margin-top: 8px; font-size: .875rem; font-weight: 700; line-height: 1.2; overflow-wrap: anywhere; }
-.pq-k { margin-top: auto; padding-top: 4px; font: 500 .75rem/1.35 var(--mono); opacity: .9; }
+.pq-k { margin-top: auto; padding-top: 4px; font: 500 .75rem/1.35 var(--mono); }
 a.pq:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .25), 0 6px 0 rgba(20, 44, 86, .2); }
 a.pq:hover .pq-o { text-decoration: underline; }
 .pq-key { list-style: none; display: flex; flex-wrap: wrap; gap: 4px 16px; margin: -4px 0 14px; padding: 0; font: 500 .8125rem/1.4 var(--mono); color: var(--muted); }
@@ -276,6 +276,7 @@ a.pq:hover .pq-o { text-decoration: underline; }
 .k--w { background: var(--gold); }
 .k--d { background: var(--silver); }
 .k--l { background: var(--bronze); }
+.k--n { background: #6d7178; }
 .k-pin { width: 12px; height: 12px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); }
 .k-pin--h { background: var(--red); }
 .k-pin--a { border: 2px solid var(--red); }
@@ -296,6 +297,7 @@ html.flt .cols2--list { visibility: hidden; }
 .chip:hover { border-color: var(--blue); }
 .chip[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: #fff; }
 @media (min-width: 700px) { .chips { flex-wrap: wrap; margin: 0; padding: 0; overflow: visible; } }
+@media (max-width: 379.98px) { .chip { padding: 8px 10px; } }
 .cal-row { margin-top: 32px; }
 
 /* kalendár */
@@ -338,7 +340,8 @@ html.flt .cols2--list { visibility: hidden; }
 .tbl--roc td small { display: block; font-size: .8125rem; color: rgba(255, 255, 255, .8); font-family: var(--text); }
 .tbl--roc tr.our { background: rgba(219, 232, 244, .14); }
 .tbl--roc tr.our th { color: #fff; }
-.tbl--roc tr.now td, .tbl--roc tr.now th { color: var(--sky-l); }
+.tbl--roc tr.roc-now td, .tbl--roc tr.roc-now th { color: var(--sky-l); } /* nie .now: tá trieda je mriežka sekcie na úvode */
+@media (max-width: 379.98px) { .tbl--roc td.nw { white-space: normal; } } /* „15.“ / „zo 16“ na dva riadky, inak tabuľka pri 320 px pretečie */
 .tbl-wrap--inv + .src { margin-top: 14px; }
 
 /* liga na úvode */
@@ -397,7 +400,7 @@ html.flt .cols2--list { visibility: hidden; }
 .strata--3 { background: radial-gradient(circle at 4px 4px, rgba(60, 40, 20, .12) 2px, transparent 2.5px) 0 0 / 22px 16px, #e2d2b0; }
 .strata--4 { background: repeating-linear-gradient(8deg, transparent 0 12px, rgba(60, 40, 20, .08) 12px 13px), #d7c39b; }
 .strata--5 { background: radial-gradient(ellipse 5px 3px at 6px 6px, rgba(60, 40, 20, .14) 99%, transparent) 0 0 / 26px 18px, #cdb68c; }
-.strata--6 { background: radial-gradient(circle at 3px 3px, rgba(255, 255, 255, .12) 1px, transparent 1.5px) 0 0 / 12px 10px, #86663f; color: #fff; }
+.strata--6 { background: radial-gradient(circle at 3px 3px, rgba(255, 255, 255, .06) 1px, transparent 1.5px) 0 0 / 12px 10px, #86663f; color: #fff; }
 .strata--7 { background: repeating-linear-gradient(-6deg, transparent 0 10px, rgba(255, 255, 255, .07) 10px 11px), #73553a; color: #fff; }
 .strata--8 { background: radial-gradient(circle at 5px 5px, rgba(255, 255, 255, .1) 2.5px, transparent 3px) 0 0 / 24px 18px, #5e4630; color: #fff; }
 .strata--9 { background: repeating-linear-gradient(4deg, transparent 0 14px, rgba(255, 255, 255, .06) 14px 15px), #4a3726; color: #fff; }
