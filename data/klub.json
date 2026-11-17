@@ -40,8 +40,8 @@
       { "rok": "1986", "nazov": "Dorast v krajských súťažiach", "text": "Dorast vyhral II. triedu Juh a v kvalifikácii v Brodzanoch postúpil. Od ročníka 1986/87 hral bez prerušenia súťaže Západoslovenského zväzu, v roku 2010 už 23 rokov." },
       { "rok": "1999 – 2004", "nazov": "V. liga", "text": "Áčko vyhralo majstrovstvá okresu a postúpilo do V. ligy, v roku 2002 opäť do V. ligy Západ." },
       { "rok": "2008", "nazov": "Umelá tráva", "text": "Viacúčelové ihrisko s umelou trávou otvoril prezident Ivan Gašparovič, starí páni Bojnej si zahrali s FC Prezident." },
-      { "rok": "2024/25", "nazov": "Dva tituly a postup", "text": "Dorast U19 vyhral IV. ligu ZsFZ a žiaci U15 svoju súťaž, poháre prevzali počas domáceho zápasu mužov. Áčko skončilo vo VII. lige štvrté so skóre 73:30 a pri reorganizácii postúpilo do novej VI. ligy Severovýchod." },
-      { "rok": "2025/26", "nazov": "Premiéra vo VI. lige", "text": "Prvý ročník vo VI. lige Severovýchod: 14. miesto a záchrana. Na domácich zápasoch povzbudzujú mladí fanúšikovia z Ultras Bojná." }
+      { "rok": "2024/25", "nazov": "Dva tituly a postup", "text": "Dorast U19 vyhral IV. ligu ZsFZ a žiaci U15 vyhrali svoju súťaž, poháre prevzali počas domáceho zápasu mužov. Áčko skončilo v VII. lige štvrté so skóre 73:30 a pri reorganizácii postúpilo do novej VI. ligy Severovýchod." },
+      { "rok": "2025/26", "nazov": "Premiéra v VI. lige", "text": "Prvý ročník v VI. lige Severovýchod: 14. miesto a záchrana. Na domácich zápasoch povzbudzujú mladí fanúšikovia z Ultras Bojná." }
     ]
   },
   "rocniky": {
@@ -87,7 +87,7 @@
     { "rok": "2024/25", "text": "dorast U19 víťaz IV. ligy ZsFZ, žiaci U15 víťazi súťaže ObFZ Topoľčany" },
     { "rok": "1999, 2002", "text": "postup do V. ligy" },
     { "rok": "1978 – 1985", "text": "I. B trieda Sever (Západoslovenský zväz)" },
-    { "rok": "2021/22", "text": "2. miesto vo VI. lige ObFZ Topoľčany" }
+    { "rok": "2021/22", "text": "2. miesto v VI. lige ObFZ Topoľčany" }
   ],
   "sutaze": {
     "_pozn": "čitateľné názvy súťaží namiesto skratiek a názvov so sponzormi zo Sportnetu",

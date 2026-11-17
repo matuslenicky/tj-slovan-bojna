@@ -21,7 +21,7 @@ Ukážka: https://matuslenicky.github.io/tj-slovan-bojna/ · administrácia (uk�
 
 - Zápasy, výsledky, strelci, karty, počty divákov, zostavy dospelých, tabuľky a súpisky 5 tímov (áčko, U19, U15, U13, U11) zo Sportnetu (Futbalnet), verejné API súťaží (`scripts/sportnet.mjs` → `data/sportnet.json`). Vek hráčov sa neukladá, zostavy len pri dospelých.
 - História futbalu v Bojnej z webu obce (bojna.sk, stránka TJ Slovan Bojná, 2008 – 2010): prvá lopta od Školských bratov, zápasy od roku 1920, Lazňa od 1955, tribúna 1976, I. B trieda, V. liga, umelá tráva s prezidentom 2008.
-- Správy z klubu z novín obce Bojnianske zrkadlo (č. 56 – 60, 2025 – 2026): dva mládežnícke tituly a postup 2024/25, premiéra vo VI. lige, halové turnaje, Ultras Bojná.
+- Správy z klubu z novín obce Bojnianske zrkadlo (č. 56 – 60, 2025 – 2026): dva mládežnícke tituly a postup 2024/25, premiéra v VI. lige, halové turnaje, Ultras Bojná.
 - Ročníky áčka 2013/14 – 2025/26 z konečných tabuliek na Sportnete (`data/klub.json`).
 - Hradisko Valy podľa Slovakia.travel, múzeum a archeoskanzen podľa TASR a SITA. Vrstevnice na úvode sú schematické, nie presná mapa.
 - E-mail zo Sportnetu, telefóny klub verejne neuvádza. Vlastný web ani sociálne siete klubu sme nenašli (17. 11. 2026).

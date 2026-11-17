@@ -51,8 +51,8 @@ function isoLocal(date, time = '12:00') {
 const acc = (league) => league.replace(/\bliga\b/, 'ligu'); // 4. pád: hrajú IV. ligu
 const vLige = (league) => `${/^IV\./.test(league) ? 'vo' : 'v'} ${esc(league.replace(/\bliga\b/, 'lige'))}`; // 6. pád: vo IV. lige, v VII. lige
 const SEASON = sn.season.replace(/^(\d{4})\/\d\d(\d\d)$/, '$1/$2');
-const plural = (n, a, b, c) => `${n} ${n === 1 ? a : n >= 2 && n <= 4 ? b : c}`;
-const zo = (n) => `${/^(4|6|7|1[467]|[467]\d)$/.test(String(n)) ? 'zo' : 'z'} ${n}`; // „zo 16“, „z 11“ (podľa výslovnosti čísla)
+const plural = (n, a, b, c) => `${n} ${n === 1 ? a : n >= 2 && n <= 4 ? b : c}`; // číslo a slovo bez zlomu riadka („4 body“)
+const zo = (n) => `${/^(4|6|7|1[467]|[467]\d)$/.test(String(n)) ? 'zo' : 'z'} ${n}`; // „zo 16“, „z 11“ (podľa výslovnosti čísla)
 const num = (n) => Number(n).toLocaleString('sk-SK');
 const nazov = (n) => club.nazvy?.[n] || n; // čitateľný názov súpera (úradné názvy a veľké písmená zo Sportnetu)
 
@@ -321,7 +321,7 @@ function matchRow(m, R, { showTeam = true } = {}) {
 </${tag}></li>`;
 }
 const matchList = (list, R, opts) => `<ol class="mlist ${list.length && list.every((m) => m.past) ? 'mlist--plaques' : 'mlist--log'}">${list.map((m) => matchRow(m, R, opts)).join('')}</ol>`;
-const plaqueKey = '<ul class="pq-key" aria-hidden="true"><li><span class="k k--w"></span>výhra</li><li><span class="k k--d"></span>remíza</li><li><span class="k k--l"></span>prehra</li></ul>';
+const plaqueKey = '<ul class="pq-key" aria-hidden="true"><li><span class="k k--w"></span>výhra</li><li><span class="k k--d"></span>remíza</li><li><span class="k k--l"></span>prehra</li><li><span class="k k--n"></span>bez výsledku</li></ul>';
 const pinKey = '<ul class="pq-key" aria-hidden="true"><li><span class="k-pin k-pin--h"></span>doma</li><li><span class="k-pin k-pin--a"></span>vonku</li></ul>';
 
 function tableHtml(tb, R, { compact = false, caption = '' } = {}) {
@@ -415,7 +415,7 @@ add('', {
   <div class="hero-copy">
     <p class="eyebrow">Futbal od roku ${club.zalozenie} · ročník ${SEASON}</p>
     <h1 class="hero-h" id="hero-h">${esc(club.nazov)}</h1>
-    <p class="hero-p">Klub z obce, kde stálo veľkomoravské hradisko Valy. Na Lazni sa hrá od roku 1955, áčko hrá ${esc(acc(A.leagueName))}${A.pos ? ` a ${winterNow ? 'po jeseni ' : ''}je na ${A.pos}. mieste ${zo(A.of)}` : ''}. V ročníku 2024/25 vyhral dorast U19 aj žiaci U15 svoju súťaž.</p>
+    <p class="hero-p">Klub z obce, kde stálo veľkomoravské hradisko Valy. Na Lazni sa hrá od roku 1955, áčko hrá ${esc(acc(A.leagueName))}${A.pos ? ` a ${winterNow ? 'po jeseni ' : ''}je na ${A.pos}. mieste ${zo(A.of)}` : ''}. V ročníku 2024/25 vyhrali dorast U19 aj žiaci U15 svoje súťaže.</p>
     <p class="hero-cta"><a class="btn btn--red" href="${R}zapasy/">Program a výsledky</a><a class="btn btn--ghost" href="${R}klub/">Vrstvy histórie</a></p>
   </div>
   <figure class="hero-map">${kontury()}<figcaption>Schematické vrstevnice hradiska Valy, nie presná mapa</figcaption></figure>
@@ -505,7 +505,7 @@ add('zapasy/', {
 // detail zápasu
 function lineupHtml(l, title) {
   if (!l || (!l.start.length && !l.subs.length)) return '';
-  const li = (p) => `<li><span class="ln-nr">${esc(p.nr)}</span><span>${esc(p.name)}${p.c ? ' <abbr class="cap" title="kapitán">C</abbr>' : ''}</span></li>`;
+  const li = (p) => `<li><span class="ln-nr">${esc(p.nr)}</span><span>${esc(p.name)}${p.c ? ' <abbr class="cap" title="kapitán"><span aria-hidden="true">C</span><span class="sr">kapitán</span></abbr>' : ''}</span></li>`;
   return `<div class="lineup"><h3 class="h4">${esc(title)}</h3><ol class="ln">${l.start.map(li).join('')}</ol>${l.subs.length ? `<p class="ln-h">Náhradníci</p><ol class="ln ln--subs">${l.subs.map(li).join('')}</ol>` : ''}${l.coach ? `<p class="ln-coach">Tréner: ${esc(l.coach)}</p>` : ''}</div>`;
 }
 for (const m of matches) {
@@ -598,7 +598,7 @@ ${t.table ? `<section class="sec" aria-labelledby="tt-h"><div class="wrap">${sec
 ${t.squad.athletes.length || t.squad.crew.length ? `<section class="sec sec--grid" aria-labelledby="ts-h"><div class="wrap">
   ${secHead('Súpiska', 'ts-h')}
   <p class="note">Hráči, ktorí v kalendárnom roku ${sn.updated.slice(0, 4)} nastúpili alebo boli v nominácii na zápas (podľa Sportnetu).${t.adult ? '' : ' Pri mládeži uvádzame len mená.'}</p>
-  ${groups.map(([h, l]) => `<h3 class="h4 sq-h">${h}</h3><ul class="squad">${l.sort((a, b) => a.name.split(' ').at(-1).localeCompare(b.name.split(' ').at(-1), 'sk')).map((a) => `<li class="pl"><span class="pl-nr" aria-hidden="true">${esc(nr(a)) || '<span class="pl-dot"></span>'}</span><span class="pl-name">${esc(a.name)}${a.captain && t.adult ? ' <abbr class="cap" title="kapitán">C</abbr>' : ''}</span>${nr(a) ? `<span class="sr">, číslo ${nr(a)}</span>` : ''}</li>`).join('')}</ul>`).join('')}
+  ${groups.map(([h, l]) => `<h3 class="h4 sq-h">${h}</h3><ul class="squad">${l.sort((a, b) => a.name.split(' ').at(-1).localeCompare(b.name.split(' ').at(-1), 'sk')).map((a) => `<li class="pl"><span class="pl-nr" aria-hidden="true">${esc(nr(a)) || '<span class="pl-dot"></span>'}</span><span class="pl-name">${esc(a.name)}${a.captain && t.adult ? ' <abbr class="cap" title="kapitán"><span aria-hidden="true">C</span><span class="sr">kapitán</span></abbr>' : ''}</span>${nr(a) ? `<span class="sr">, číslo ${nr(a)}</span>` : ''}</li>`).join('')}</ul>`).join('')}
   ${t.squad.crew.length ? `<h3 class="h4 sq-h">Realizačný tím</h3><ul class="crew">${t.squad.crew.map((c) => `<li><span class="crew-r">${esc(crewRole[c.role] || crewRole.other)}</span><span>${esc(c.name)}</span></li>`).join('')}</ul>` : ''}
 </div></section>` : ''}`;
     },
@@ -613,7 +613,7 @@ add('mladez/', {
     return `${pageHead({ title: 'Mládež', sub: `${plural(youth.length, 'mládežnícky tím', 'mládežnícke tímy', 'mládežníckych tímov')} v ročníku ${SEASON}, od prípravky U11 po dorast U19.`, R, crumbs: [[null, 'Mládež']] })}
 <section class="sec sec--first"><div class="wrap youth-top">
   <div>
-    <p class="lead">Bojná má mládež v každej vekovej kategórii. V ročníku 2024/25 vyhral dorast IV. ligu U19 Západoslovenského zväzu a starší žiaci U15 svoju súťaž ObFZ Topoľčany. Dorast hrá súťaže krajského zväzu od roku 1986, v roku 2010 to bolo bez prerušenia už 23 rokov.</p>
+    <p class="lead">V ročníku 2024/25 vyhral dorast IV. ligu U19 Západoslovenského zväzu a starší žiaci U15 vyhrali svoju súťaž ObFZ Topoľčany. Dorast hrá súťaže krajského zväzu od roku 1986, v roku 2010 to bolo bez prerušenia už 23 rokov.</p>
     <ul class="coaches">${youth.map((t) => `<li><a href="${R}${t.url}"><b>${esc(t.short)}</b><span>${esc(t.sub)} · ${esc(t.leagueName)}${t.pos ? ` · ${t.pos}. miesto` : ''}</span>${coachOf(t) ? `<small>tréner ${esc(coachOf(t))}</small>` : ''}</a></li>`).join('')}</ul>
     <p class="src">Tréneri, súťaže a poradie podľa Sportnetu, tituly podľa Bojnianskeho zrkadla č. 57/2025, dorast podľa webu obce.</p>
   </div>
@@ -646,6 +646,7 @@ add('klub/', {
     <img class="klub-erb" src="${R}img/erb-240.webp" alt="${esc(club.erbAlt)}" width="160" height="160" loading="lazy">
     <h3 class="h4">Úspechy</h3>
     <ul class="wins">${club.uspechy.map((u) => `<li>${I.trophy}<span><b>${esc(u.rok)}</b> ${esc(u.text)}</span></li>`).join('')}</ul>
+    <p class="note">${esc(club.hala.text)}</p>
     <p class="src">Zdroj: web obce Bojná (Z histórie futbalu v Bojnej), Bojnianske zrkadlo, Sportnet.</p>
   </div>
   ${strata()}
@@ -654,9 +655,9 @@ add('klub/', {
   ${secHead('Ročníky áčka', 'roc-h', '', 'Od 2013/14')}
   <div class="tbl-wrap tbl-wrap--inv"><table class="tbl tbl--roc"><caption class="sr">Ročníky áčka od 2013/14</caption>
     <thead><tr><th scope="col" class="tl">Ročník</th><th scope="col" class="tl">Súťaž</th><th scope="col">Miesto</th><th scope="col" class="hm">Skóre</th><th scope="col">Body</th></tr></thead>
-    <tbody>${club.rocniky.zoznam.map((x) => `<tr${x.naj ? ' class="our"' : ''}><th scope="row" class="tl">${esc(x.rok)}</th><td class="tl">${esc(x.liga)}${x.pozn ? `<small>${esc(x.pozn)}</small>` : ''}</td><td class="nw">${x.poz}. ${zo(x.z)}</td><td class="hm nw">${esc(x.skore)}</td><td>${x.body}</td></tr>`).join('')}<tr class="now"><th scope="row" class="tl">${SEASON}</th><td class="tl">${esc(A.leagueName)}<small>${winterNow ? 'po jeseni' : 'priebežne'}</small></td><td class="nw">${A.pos ? `${A.pos}. ${zo(A.of)}` : '–'}</td><td class="hm nw">${record(A.slug, (m) => !m.cup).gf}:${record(A.slug, (m) => !m.cup).ga}</td><td>${A.table?.rows.find((r) => r.our)?.pts ?? '–'}</td></tr></tbody>
+    <tbody>${club.rocniky.zoznam.map((x) => `<tr${x.naj ? ' class="our"' : ''}><th scope="row" class="tl">${esc(x.rok)}</th><td class="tl">${esc(x.liga)}${x.pozn ? `<small>${esc(x.pozn)}</small>` : ''}</td><td class="nw">${x.poz}.<span> ${zo(x.z)}</span></td><td class="hm nw">${esc(x.skore)}</td><td>${x.body}</td></tr>`).join('')}<tr class="roc-now"><th scope="row" class="tl">${SEASON}</th><td class="tl">${esc(A.leagueName)}<small>${winterNow ? 'po jeseni' : 'priebežne'}</small></td><td class="nw">${A.pos ? `${A.pos}.<span> ${zo(A.of)}</span>` : '–'}</td><td class="hm nw">${record(A.slug, (m) => !m.cup).gf}:${record(A.slug, (m) => !m.cup).ga}</td><td>${A.table?.rows.find((r) => r.our)?.pts ?? '–'}</td></tr></tbody>
   </table></div>
-  <p class="src src--inv">Zdroj: konečné tabuľky zo Sportnetu.</p>
+  <p class="src src--inv">Zdroj: konečné tabuľky zo Sportnetu, ročník ${SEASON} priebežne.</p>
 </div></section>
 <section class="sec sec--grid" id="obec" aria-labelledby="ob2-h"><div class="wrap">
   ${secHead('Bojná a hradisko Valy', 'ob2-h', '', 'Obec pod Považským Inovcom')}
@@ -822,6 +823,8 @@ const typo = (html) => html.split(/(<script[\s\S]*?<\/script>|<style[\s\S]*?<\/s
   .replace(/(\d) : (\d)/g, `$1${NB}:${NB}$2`)
   .replace(/ - /g, ' – ') // spojovník medzi medzerami (názvy klubov a ihrísk zo Sportnetu) -> pomlčka
   .replace(/\b(U\d{1,2}) ([A-D])\b/g, `$1${NB}$2`) // „U15 A“ sa nerozdelí
+  .replace(/([a-záäčďéíĺľňóôŕšťúýž]) (U\d{1,2})\b/g, `$1${NB}$2`) // „dorast U19“, „prípravky U11“ sa nerozdelí
+  .replace(/(\d) (?=(?:rok|roky|rokov|rokoch|divák|diváci|divákov|bod|body|bodov|tím|tímy|tímov|mužstiev|vzorkami|m²)(?![a-záäčďéíĺľňóôŕšťúýž]))/g, `$1${NB}`) // „400 divákov“, „23 rokov“
   .replace(/(?<=^|[\s(])(po|ut|st|št|pi|so|ne) (?=\d{1,2}\.)/g, `$1${NB}`) // „ne 15. 11.“
   .replace(/(\d\.) (?=(?:kol[oae]|miest[oea])\b)/g, `$1${NB}`)
   .replace(/(?<![\d.])(\d{1,2}\.) (?=[a-záäčďéíĺľňóôŕšťúýž])/g, `$1${NB}`) // „14. storočia“, „3. mieste“ (radová číslovka s podstatným menom)
