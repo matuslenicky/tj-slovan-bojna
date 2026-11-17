@@ -1,0 +1,114 @@
+{
+  "_zdroj": "Ručne zapísané len zo zverejnených zdrojov (uvedené pri každej časti). Nič nedopĺňať odhadom – chýbajúce údaje dodá klub.",
+  "nazov": "TJ Slovan Bojná",
+  "kratky": "Bojná",
+  "pravnyNazov": "TJ Slovan Bojná",
+  "_pravnyNazov": "Sportnet",
+  "mesto": "Bojná",
+  "zalozenie": 1920,
+  "_zalozenie": "web obce Bojná (TJ Slovan Bojná – Z histórie futbalu v Bojnej): futbal za účasti divákov od roku 1920",
+  "farby": "modrá, biela a červená",
+  "_farby": "erb klubu (Sportnet)",
+  "erbAlt": "Erb TJ Slovan Bojná: v modrom lemovanom štíte nápis TJ Slovan Bojná, v červenom kruhu biely vinohradnícky nôž a strapec hrozna",
+  "adresa": ["Bojná", "956 01 Bojná"],
+  "_adresa": "Sportnet (PSČ 956 01)",
+  "kontakt": { "email": "tjslovanbojna@gmail.com" },
+  "_kontakt": "Sportnet (kontakt klubu)",
+  "sportnetUrl": "https://sportnet.sme.sk/futbalnet/k/tj-slovan-bojna/",
+  "noviny": "https://www.bojna.sk/",
+  "_noviny": "Bojnianske zrkadlo, noviny obce (bojna.sk), rubrika šport",
+  "fanusikovia": "Ultras Bojná",
+  "_fanusikovia": "Bojnianske zrkadlo č. 60/2026",
+  "stadion": {
+    "_zdroj": "web obce Bojná (história futbalu), Sportnet (poloha)",
+    "nazov": "Štadión TJ Slovan Bojná na Lazni",
+    "geo": [48.578692, 18.0587457],
+    "miesto": "Lazňa",
+    "fakty": [
+      { "k": "Od 1955", "t": "Na Lazni sa hrá od roku 1955. Predtým sa hrávalo striedavo na Lúčkach a v Malých Dvoranoch pri mlyne." },
+      { "k": "1976", "t": "Kabíny s krytou tribúnou pre 400 divákov a betónová ohrada okolo areálu, postavené v akcii „Z“." },
+      { "k": "2007 – 2008", "t": "Za futbalovým ihriskom pribudlo viacúčelové ihrisko s umelou trávou (800 m²). Slávnostne ho otvorili 31. mája 2008 za účasti prezidenta Ivana Gašparoviča zápasom starých pánov TJ Slovan Bojná – FC Prezident." }
+    ]
+  },
+  "vrstvy": {
+    "_zdroj": "web obce Bojná (TJ Slovan Bojná – Z histórie futbalu v Bojnej, 2008 – 2010); Bojnianske zrkadlo č. 56, 57, 59 a 60 (2025 – 2026); Sportnet",
+    "zoznam": [
+      { "rok": "začiatok 20. stor.", "nazov": "Prvá lopta", "text": "Prvú futbalovú loptu priniesli do Bojnej Školskí bratia, ktorí futbal hrávali aj v kláštore." },
+      { "rok": "1920", "nazov": "Malé Dvorany pri mlyne", "text": "Futbal pred divákmi sa začína hrať na ihrisku v Malých Dvoranoch pri mlyne, len s okolitými obcami. Ihrisko sa sťahuje medzi Lúčky a Malé Dvorany." },
+      { "rok": "1955", "nazov": "Lazňa", "text": "Futbal sa presúva na Lazňu, kde sa hrá dodnes. Klub sa volal ŠK, Družstevník a Sokol, od roku 1970 Slovan." },
+      { "rok": "1976 – 1985", "nazov": "Tribúna a I. B trieda", "text": "V roku 1976 pribudli kabíny s krytou tribúnou pre 400 divákov. Hrajúci tréner Jozef Hlípala, bývalý druholigista zo Spišskej Novej Vsi a Topoľčian, doviedol áčko z III. triedy až do I. B triedy, kde hralo v rokoch 1978 až 1985." },
+      { "rok": "1986", "nazov": "Dorast v krajských súťažiach", "text": "Dorast vyhral II. triedu Juh a v kvalifikácii v Brodzanoch postúpil. Od ročníka 1986/87 hral bez prerušenia súťaže Západoslovenského zväzu, v roku 2010 už 23 rokov." },
+      { "rok": "1999 – 2004", "nazov": "V. liga", "text": "Áčko vyhralo majstrovstvá okresu a postúpilo do V. ligy, v roku 2002 opäť do V. ligy Západ." },
+      { "rok": "2008", "nazov": "Umelá tráva", "text": "Viacúčelové ihrisko s umelou trávou otvoril prezident Ivan Gašparovič, starí páni Bojnej si zahrali s FC Prezident." },
+      { "rok": "2024/25", "nazov": "Dva tituly a postup", "text": "Dorast U19 vyhral IV. ligu ZsFZ a žiaci U15 svoju súťaž, poháre prevzali počas domáceho zápasu mužov. Áčko skončilo vo VII. lige štvrté so skóre 73:30 a pri reorganizácii postúpilo do novej VI. ligy Severovýchod." },
+      { "rok": "2025/26", "nazov": "Premiéra vo VI. lige", "text": "Prvý ročník vo VI. lige Severovýchod: 14. miesto a záchrana. Na domácich zápasoch povzbudzujú mladí fanúšikovia z Ultras Bojná." }
+    ]
+  },
+  "rocniky": {
+    "_zdroj": "Sportnet – konečné tabuľky áčka (dospelí), stiahnuté 17. 11. 2026",
+    "zoznam": [
+      { "rok": "2013/14", "liga": "majstrovstvá okresu", "poz": 15, "z": 16, "skore": "33:60", "body": 22 },
+      { "rok": "2014/15", "liga": "VI. liga ObFZ Topoľčany", "poz": 6, "z": 14, "skore": "48:46", "body": 38 },
+      { "rok": "2015/16", "liga": "VI. liga ObFZ Topoľčany", "poz": 5, "z": 14, "skore": "65:38", "body": 45 },
+      { "rok": "2016/17", "liga": "VI. liga ObFZ Topoľčany", "poz": 4, "z": 14, "skore": "65:51", "body": 46 },
+      { "rok": "2017/18", "liga": "VI. liga ObFZ Topoľčany", "poz": 13, "z": 16, "skore": "44:74", "body": 32 },
+      { "rok": "2018/19", "liga": "VI. liga ObFZ Topoľčany", "poz": 14, "z": 16, "skore": "34:65", "body": 25 },
+      { "rok": "2019/20", "liga": "VI. liga ObFZ Topoľčany", "poz": 6, "z": 16, "skore": "25:17", "body": 24, "pozn": "nedohraná sezóna (pandémia)" },
+      { "rok": "2020/21", "liga": "VI. liga ObFZ Topoľčany", "poz": 3, "z": 16, "skore": "25:16", "body": 18, "pozn": "nedohraná sezóna (pandémia)" },
+      { "rok": "2021/22", "liga": "VI. liga ObFZ Topoľčany", "poz": 2, "z": 14, "skore": "71:27", "body": 59, "pozn": "najlepšie umiestnenie v ročníkoch na Sportnete", "naj": true },
+      { "rok": "2022/23", "liga": "VII. liga ObFZ Topoľčany", "poz": 3, "z": 14, "skore": "86:31", "body": 53 },
+      { "rok": "2023/24", "liga": "VII. liga ObFZ Topoľčany", "poz": 4, "z": 14, "skore": "61:26", "body": 49 },
+      { "rok": "2024/25", "liga": "VII. liga ObFZ Topoľčany", "poz": 4, "z": 14, "skore": "73:30", "body": 52, "pozn": "postup do VI. ligy Severovýchod pri reorganizácii" },
+      { "rok": "2025/26", "liga": "VI. liga Severovýchod", "poz": 14, "z": 16, "skore": "29:63", "body": 24, "pozn": "prvý ročník po postupe, záchrana" }
+    ]
+  },
+  "tituly": {
+    "_zdroj": "Bojnianske zrkadlo č. 57/2025 (Futbalová radosť v Bojnej: U19 aj U15 ovládli svoje ligy!)",
+    "zoznam": [
+      { "kat": "U19", "text": "Starší dorast vyhral IV. ligu U19 ZsFZ, skupinu G, a v nadstavbe o 1. miesto nenašiel premožiteľa. Za všetky hovorí výhra 10:2 nad Dolnými Vestenicami." },
+      { "kat": "U15", "text": "Starší žiaci si suverénne poradili so súpermi vo svojej súťaži ObFZ Topoľčany." }
+    ]
+  },
+  "hala": {
+    "_zdroj": "Bojnianske zrkadlo č. 56/2025",
+    "text": "Na 22. zimnom halovom turnaji ObFZ Topoľčany (5. 1. 2025, 16 mužstiev) skončilo áčko druhé po finále s FC Topoľčany 0:2, dorast vyhral svoj halový turnaj so skóre 37:9."
+  },
+  "obec": {
+    "_zdroj": "Slovakia.travel (Hradisko Valy v Bojnej); TASR a SITA (Archeologické múzeum Veľkej Moravy, archeoskanzen); Bojnianske zrkadlo č. 56/2025 (výstava vín)",
+    "fakty": [
+      { "k": "Hradisko Valy", "t": "Opevnené slovanské hradisko patrí k najväčším veľkomoravským aglomeráciám na Slovensku. Rozmach zažilo začiatkom 9. storočia ako mocenské a hospodárske centrum Nitrianskeho kniežatstva." },
+      { "k": "Pozlátené plakety", "t": "Najvzácnejší nález: súbor pozlátených reliéfnych plakiet, pravdepodobne z prenosného oltára. Krátke latinské nápisy na nich patria k prvým dokladom písma u Slovanov v strednej Európe." },
+      { "k": "Zvon z 9. storočia", "t": "Bronzový zvon z hradiska patrí k malej skupine najstarších kresťanských zvonov na svete." },
+      { "k": "Múzeum", "t": "Nálezy sú v Archeologickom múzeu Veľkej Moravy v Bojnej. Obec pripravuje archeoskanzen s rekonštrukciou slovanskej opevnenej brány." },
+      { "k": "Víno", "t": "Obec každú jar organizuje výstavu a ochutnávku vín, v roku 2025 už 14. ročník so 147 vzorkami." }
+    ]
+  },
+  "uspechy": [
+    { "rok": "2024/25", "text": "dorast U19 víťaz IV. ligy ZsFZ, žiaci U15 víťazi súťaže ObFZ Topoľčany" },
+    { "rok": "1999, 2002", "text": "postup do V. ligy" },
+    { "rok": "1978 – 1985", "text": "I. B trieda Sever (Západoslovenský zväz)" },
+    { "rok": "2021/22", "text": "2. miesto vo VI. lige ObFZ Topoľčany" }
+  ],
+  "sutaze": {
+    "_pozn": "čitateľné názvy súťaží namiesto skratiek a názvov so sponzormi zo Sportnetu",
+    "Slovnaft Cup": "Slovnaft Cup",
+    "VI. liga Severovýchod Macron | yoursport  ZsFZ": "VI. liga Severovýchod",
+    "IV. liga  U19  Macron | yoursport  ZsFZ": "IV. liga U19",
+    "IV.liga - Ž - U15 - ObFZ TO": "IV. liga starších žiakov U15",
+    "IV. liga - Ž - U13 - ObFZ TO": "IV. liga mladších žiakov U13",
+    "III. liga-prípravka-U11- ObFZ TO": "III. liga prípraviek U11"
+  },
+  "nazvy": {
+    "_pozn": "čitateľné názvy súperov namiesto úradných názvov a veľkých písmen zo Sportnetu",
+    "TJ  Slovan Bojná": "TJ Slovan Bojná",
+    "TJ - ŠK Radošina": "TJ-ŠK Radošina",
+    "FUTBALOVÝ KLUB SLOVAN ŠIMONOVANY - PARTIZÁNSKE": "Slovan Šimonovany-Partizánske",
+    "Futbalový klub Koniarovce": "FK Koniarovce",
+    "Mestský futbalový klub Baník Handlová": "MFK Baník Handlová",
+    "OFK obce Prašice": "OFK Prašice",
+    "TJ Družstevník Horná Nitra Nedožery-Brezany": "TJ Družstevník Nedožery-Brezany",
+    "ŠPORTOVÉ CENTRUM CHYNORANY": "ŠC Chynorany",
+    "ŠK VEGUM Dolné Vestenice": "ŠK Vegum Dolné Vestenice",
+    "OFK ČERMANY, o. z.": "OFK Čermany"
+  }
+}
