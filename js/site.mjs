@@ -1,15 +1,15 @@
-// Správanie webu TJ Slovan Bojná (bez knižníc): menu ako plán hradiska, filtre zápasov, odpočet, kalendár.
+// Správanie klubového webu (bez knižníc): menu v dialógu, filtre zápasov, odpočet do výkopu, kalendár.
 const $ = (s, el = document) => el.querySelector(s);
 const $$ = (s, el = document) => [...el.querySelectorAll(s)];
 
-// ---- menu na telefóne: modálny <dialog> ako plán, ktorý sa rozvinie kruhom (Esc a „Zavrieť“ ho zatvoria, fokus sa vráti na tlačidlo) ----
+// ---- menu na telefóne: modálny <dialog> cez celú obrazovku (Esc, „Zavrieť“ a klik na odkaz ho zatvoria, fokus sa vráti na tlačidlo) ----
 const menuBtn = $('.menu-btn'), menu = $('#menu');
 if (menuBtn && menu && typeof menu.showModal === 'function') {
   const close = () => { if (menu.open) menu.close(); };
-  menuBtn.addEventListener('click', () => { menu.showModal(); document.documentElement.classList.add('menu-open'); });
-  menu.addEventListener('close', () => { document.documentElement.classList.remove('menu-open'); menuBtn.focus(); });
+  menuBtn.addEventListener('click', () => { menu.showModal(); menuBtn.setAttribute('aria-expanded', 'true'); document.documentElement.classList.add('menu-open'); });
+  menu.addEventListener('close', () => { menuBtn.setAttribute('aria-expanded', 'false'); document.documentElement.classList.remove('menu-open'); menuBtn.focus(); });
   $('[data-close]', menu).addEventListener('click', close);
-  // klik na odkaz alebo mimo obsahu (cieľom je samotný <dialog>) menu zavrie
+  // klik na odkaz alebo mimo panelu (cieľom je samotný <dialog>) menu zavrie
   menu.addEventListener('click', (e) => {
     if (e.target.closest('a')) return close();
     if (e.target === menu) close();
