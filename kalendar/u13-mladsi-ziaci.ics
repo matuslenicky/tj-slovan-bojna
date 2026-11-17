@@ -1,0 +1,194 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//TJ Slovan Bojná//Zapasy//SK
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:TJ Slovan Bojná – Mladší žiaci U13
+X-WR-TIMEZONE:Europe/Bratislava
+BEGIN:VTIMEZONE
+TZID:Europe/Bratislava
+BEGIN:DAYLIGHT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+TZNAME:CEST
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+TZNAME:CET
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:zapas-6a66fecdb02131318ec6eca1@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20260830T103000
+DURATION:PT2H
+SUMMARY:U13: TJ Slovan Bojná U13 – OFK Veľké Ripňany 19:1
+DESCRIPTION:IV. liga mladších žiakov U13\, 1. kolo\nDomáci zápas
+LOCATION:TJ Slovan Bojná
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66fecdb02131318ec6ec6f@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20260906T103000
+DURATION:PT2H
+SUMMARY:U13: TJ Družstevník Jacovce – TJ Slovan Bojná U13 6:2
+DESCRIPTION:IV. liga mladších žiakov U13\, 2. kolo\nZápas vonku
+LOCATION:TJ Družstevník Jacovce
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66fecdb02131318ec6ed05@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20260912T103000
+DURATION:PT2H
+SUMMARY:U13: TJ Slovan Bojná U13 – OFK Krnča
+DESCRIPTION:IV. liga mladších žiakov U13\, 3. kolo\nDomáci zápas
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66fed7b02131318ec7022e@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20260920T110000
+DURATION:PT2H
+SUMMARY:U13: FC Topoľčany B – TJ Slovan Bojná U13 6:4
+DESCRIPTION:IV. liga mladších žiakov U13\, 4. kolo\nZápas vonku
+LOCATION:TJ Nemčice
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66fecdb02131318ec6ee4e@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20260926T093000
+DURATION:PT2H
+SUMMARY:U13: OFK Prašice – TJ Slovan Bojná U13 1:7
+DESCRIPTION:IV. liga mladších žiakov U13\, 5. kolo\nZápas vonku
+LOCATION:OFK Prašice
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66feceb02131318ec6efbf@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20261003T100000
+DURATION:PT2H
+SUMMARY:U13: OFK Tovarníky – TJ Slovan Bojná U13 7:5
+DESCRIPTION:IV. liga mladších žiakov U13\, 6. kolo\nZápas vonku
+LOCATION:OFK Tovarníky
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66fed7b02131318ec7029a@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20261014T163000
+DURATION:PT2H
+SUMMARY:U13: TJ Slovan Bojná U13 – TJ Slovan Krušovce 9:0
+DESCRIPTION:IV. liga mladších žiakov U13\, 7. kolo\nDomáci zápas
+LOCATION:TJ Slovan Bojná
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66feceb02131318ec6f07d@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20261017T103000
+DURATION:PT2H
+SUMMARY:U13: TJ Slovan Preseľany – TJ Slovan Bojná U13 2:1
+DESCRIPTION:IV. liga mladších žiakov U13\, 8. kolo\nZápas vonku
+LOCATION:Štadión TJ Slovan Preseľany
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66feceb02131318ec6f133@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20261101T103000
+DURATION:PT2H
+SUMMARY:U13: TJ Slovan Bojná U13 – OFK Ludanice 0:2
+DESCRIPTION:IV. liga mladších žiakov U13\, 10. kolo\nDomáci zápas
+LOCATION:TJ Slovan Bojná
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66feceb02131318ec6f213@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20261107T113000
+DURATION:PT2H
+SUMMARY:U13: OFK Nitrianska Blatnica – TJ Slovan Bojná U13 2:3
+DESCRIPTION:IV. liga mladších žiakov U13\, 11. kolo\nZápas vonku
+LOCATION:Nitrianska Blatnica
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66feceb02131318ec6f218@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20270327T103000
+DURATION:PT2H
+SUMMARY:U13: OFK Veľké Ripňany – TJ Slovan Bojná U13
+DESCRIPTION:IV. liga mladších žiakov U13\, 12. kolo\nZápas vonku
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66feceb02131318ec6f2d7@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20270403T103000
+DURATION:PT2H
+SUMMARY:U13: TJ Slovan Bojná U13 – TJ Družstevník Jacovce
+DESCRIPTION:IV. liga mladších žiakov U13\, 13. kolo\nDomáci zápas
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66fecfb02131318ec6f4eb@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20270410T103000
+DURATION:PT2H
+SUMMARY:U13: OFK Krnča – TJ Slovan Bojná U13
+DESCRIPTION:IV. liga mladších žiakov U13\, 14. kolo\nZápas vonku
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66feceb02131318ec6f3f9@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20270417T103000
+DURATION:PT2H
+SUMMARY:U13: TJ Slovan Bojná U13 – FC Topoľčany B
+DESCRIPTION:IV. liga mladších žiakov U13\, 15. kolo\nDomáci zápas
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66fecfb02131318ec6f471@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20270424T103000
+DURATION:PT2H
+SUMMARY:U13: TJ Slovan Bojná U13 – OFK Prašice
+DESCRIPTION:IV. liga mladších žiakov U13\, 16. kolo\nDomáci zápas
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66fecfb02131318ec6f5fd@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20270501T103000
+DURATION:PT2H
+SUMMARY:U13: TJ Slovan Bojná U13 – OFK Tovarníky
+DESCRIPTION:IV. liga mladších žiakov U13\, 17. kolo\nDomáci zápas
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66fecfb02131318ec6f573@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20270508T103000
+DURATION:PT2H
+SUMMARY:U13: TJ Slovan Krušovce – TJ Slovan Bojná U13
+DESCRIPTION:IV. liga mladších žiakov U13\, 18. kolo\nZápas vonku
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66fecfb02131318ec6f78e@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20270515T103000
+DURATION:PT2H
+SUMMARY:U13: TJ Slovan Bojná U13 – TJ Slovan Preseľany
+DESCRIPTION:IV. liga mladších žiakov U13\, 19. kolo\nDomáci zápas
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66fecfb02131318ec6f7d7@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20270529T103000
+DURATION:PT2H
+SUMMARY:U13: OFK Ludanice – TJ Slovan Bojná U13
+DESCRIPTION:IV. liga mladších žiakov U13\, 21. kolo\nZápas vonku
+END:VEVENT
+BEGIN:VEVENT
+UID:zapas-6a66fecfb02131318ec6f7bb@tj-slovan-bojna.sportnet
+DTSTAMP:20261117T165146Z
+DTSTART;TZID=Europe/Bratislava:20270605T103000
+DURATION:PT2H
+SUMMARY:U13: TJ Slovan Bojná U13 – OFK Nitrianska Blatnica
+DESCRIPTION:IV. liga mladších žiakov U13\, 22. kolo\nDomáci zápas
+END:VEVENT
+END:VCALENDAR
