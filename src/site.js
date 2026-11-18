@@ -2,10 +2,10 @@
 // Zostavuje ho kluby-siet/engine/assemble.py zo spoločného jadra v2 a tohto súboru (vzhľad, úvod, stránka Klub).
 // Kostra „Dátová tabuľa“: úvod stojí na číslach – pás s údajmi áčka (miesto, body, skóre, forma, najbližší zápas),
 // pod ním husté tabuľky zápasov a ligy vedľa seba a prehľad všetkých tímov mládeže v jednej tabuľke. Biela, čierna
-// a modrá z klubových farieb, červená len pri prehre. Písmo IBM Plex Mono (čísla, popisy) a IBM Plex Serif (text).
+// a modrá z klubových farieb, červená len pri prehre. Písmo JetBrains Mono (čísla, popisy) a IBM Plex Serif (text).
 const SKIN = {
   nav: 'bar', theme: '#173b7a', brand: 'TJ Slovan Bojná', brandSub: 'od roku 1920',
-  fonts: ['ibm-plex-mono-500.woff', 'ibm-plex-serif-400.woff', 'ibm-plex-serif-600.woff'],
+  fonts: ['jetbrains-mono-500.woff', 'ibm-plex-serif-400.woff', 'ibm-plex-serif-600.woff'],
   sources: 'História podľa webu obce a Bojnianskeho zrkadla.',
   adminHero: 'Futbal v Bojnej od roku 1920',
   adminFacts: club.vrstvy.zoznam.map((v) => ({ k: v.rok, t: v.text })),
@@ -25,15 +25,15 @@ add('', {
   <h1 class="h1">TJ Slovan Bojná <span>${esc(A.leagueName)} · ročník ${SEASON}</span></h1>
   <dl class="cells">
     ${row ? cell('Miesto', `${A.pos}.`, zo(A.of)) + cell('Body', row.pts, `${row.played} ${pw(row.played, 'zápas', 'zápasy', 'zápasov')}`) + cell('Skóre', `${row.gf}:${row.ga}`, `${row.won}–${row.draw}–${row.lost}`) : ''}
-    <div class="cell cell--form"><dt>Forma</dt><dd>${formHtml(A.slug)}</dd></div>
-    ${n ? `<div class="cell cell--next"><dt>Najbližší zápas</dt><dd><a href="${R}${n.url}"><b>${esc(n.opponent)}</b><span>${dDay(n.date)} ${dShort(n.date)} · ${esc(n.time || '')} · ${n.home ? 'doma' : 'vonku'}</span></a></dd></div>` : ''}
+    ${lastA ? `<div class="cell cell--form cell--last"><dt>Posledný zápas</dt><dd><a href="${R}${lastA.url}"><b>${lastA.gf}:${lastA.ga}</b><span>${esc(lastA.opponent)} · ${dShort(lastA.date)}</span></a></dd></div>` : ''}
+    ${n ? `<div class="cell cell--next"><dt>${wl ? 'Po zimnej prestávke' : 'Najbližší zápas'}</dt><dd><a href="${R}${n.url}"><b>${esc(n.opponent)}</b><span>${dDay(n.date)} ${dShort(n.date)} · ${esc(n.time || '')} · ${n.home ? 'doma' : 'vonku'}</span></a></dd></div>` : ''}
   </dl>
-  ${wl ? `<p class="board-note">${wl}</p>` : ''}
+  ${wl && !n ? `<p class="board-note">${wl}</p>` : ''}
 </div></section>
 <section class="sec board"><div class="wrap board-in">
   <div>
     <h2 class="h3">Výsledky</h2>${fxList(homeRes(7), R)}
-    <h2 class="h3 h3--gap">Program</h2>${homeUp(5).length ? fxList(homeUp(5), R) : '<p>Ďalšie zápasy zatiaľ nie sú vyžrebované.</p>'}
+    <h2 class="h3 h3--gap">Program</h2>${homeUp(5, nextA).length ? fxList(homeUp(5, nextA), R) : '<p>Ďalšie zápasy zatiaľ nie sú vyžrebované.</p>'}
     ${more(`${R}zapasy/`, 'Všetky zápasy')}
   </div>
   <div>

@@ -6,7 +6,7 @@ Ukážka: https://matuslenicky.github.io/tj-slovan-bojna/ · administrácia (uk�
 
 ## Vzhľad
 
-**„Dátová tabuľa“ (dizajn v2, 17. 11. 2026).** Biela, čierna a modrá z klubových farieb, červená len pri prehre. Písmo IBM Plex Mono (čísla, popisy) a IBM Plex Serif (text).
+**„Dátová tabuľa“ (dizajn v2, 17. 11. 2026).** Biela, čierna a modrá z klubových farieb, červená len pri prehre. Písmo JetBrains Mono (čísla, popisy) a IBM Plex Serif (text).
 
 - úvod stojí na číslach: pás s údajmi áčka (miesto, body, skóre, forma, najbližší zápas), pod ním husté tabuľky výsledkov, programu a celej ligy vedľa seba,
 - prehľad všetkých tímov v jednej tabuľke (súťaž, miesto, posledný výsledok),

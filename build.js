@@ -2,7 +2,7 @@
 // Zostavuje ho kluby-siet/engine/assemble.py zo spoločného jadra v2 a tohto súboru (vzhľad, úvod, stránka Klub).
 // Kostra „Dátová tabuľa“: úvod stojí na číslach – pás s údajmi áčka (miesto, body, skóre, forma, najbližší zápas),
 // pod ním husté tabuľky zápasov a ligy vedľa seba a prehľad všetkých tímov mládeže v jednej tabuľke. Biela, čierna
-// a modrá z klubových farieb, červená len pri prehre. Písmo IBM Plex Mono (čísla, popisy) a IBM Plex Serif (text).
+// a modrá z klubových farieb, červená len pri prehre. Písmo JetBrains Mono (čísla, popisy) a IBM Plex Serif (text).
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -172,8 +172,8 @@ const homePick = (list, n) => {
   const rest = cand.filter((m) => !a.includes(m)).slice(0, n - a.length);
   return cand.filter((m) => a.includes(m) || rest.includes(m)); // áčko má prednosť, poradie zoznamu ostáva
 };
-const homeUp = (n = 5) => homePick(upcoming, n);
-const homeRes = (n = 5) => homePick(results.filter((x) => x.score), n);
+const homeUp = (n = 5, skip = []) => homePick(upcoming.filter((m) => ![].concat(skip).includes(m)), n); // skip: zápas, ktorý už úvod zvýrazňuje
+const homeRes = (n = 5, skip = []) => homePick(results.filter((x) => x.score && ![].concat(skip).includes(x)), n);
 const MON3 = ['jan', 'feb', 'mar', 'apr', 'máj', 'jún', 'júl', 'aug', 'sep', 'okt', 'nov', 'dec'];
 
 // ---- kostra stránky ------------------------------------------------------------------------------
@@ -189,7 +189,7 @@ function layout({ route, title, desc, body, active, bodyClass = '' }) {
   const ld = route ? '' : `<script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org', '@type': 'SportsClub', name: club.nazov, sport: 'Futbal', ...(club.zalozenie ? { foundingDate: String(club.zalozenie) } : {}),
     email: club.kontakt.email,
-    address: { '@type': 'PostalAddress', streetAddress: club.adresa[0], postalCode: club.adresa[1].slice(0, 6), addressLocality: club.mesto, addressCountry: 'SK' },
+    address: { '@type': 'PostalAddress', ...(club.adresa.length > 1 ? { streetAddress: club.adresa[0] } : {}), postalCode: (club.adresa.at(-1).match(/^\d{3} ?\d{2}/) || [''])[0], addressLocality: club.mesto, addressCountry: 'SK' },
     location: { '@type': 'StadiumOrArena', name: ST.nazov, geo: { '@type': 'GeoCoordinates', latitude: ST.geo[0], longitude: ST.geo[1] } },
     sameAs: [club.sportnetUrl, club.kontakt.facebook].filter(Boolean),
   }).replace(/</g, '\\u003c')}</script>`;
@@ -489,7 +489,7 @@ add('404/', {
 
 const SKIN = {
   nav: 'bar', theme: '#173b7a', brand: 'TJ Slovan Bojná', brandSub: 'od roku 1920',
-  fonts: ['ibm-plex-mono-500.woff', 'ibm-plex-serif-400.woff', 'ibm-plex-serif-600.woff'],
+  fonts: ['jetbrains-mono-500.woff', 'ibm-plex-serif-400.woff', 'ibm-plex-serif-600.woff'],
   sources: 'História podľa webu obce a Bojnianskeho zrkadla.',
   adminHero: 'Futbal v Bojnej od roku 1920',
   adminFacts: club.vrstvy.zoznam.map((v) => ({ k: v.rok, t: v.text })),
@@ -509,15 +509,15 @@ add('', {
   <h1 class="h1">TJ Slovan Bojná <span>${esc(A.leagueName)} · ročník ${SEASON}</span></h1>
   <dl class="cells">
     ${row ? cell('Miesto', `${A.pos}.`, zo(A.of)) + cell('Body', row.pts, `${row.played} ${pw(row.played, 'zápas', 'zápasy', 'zápasov')}`) + cell('Skóre', `${row.gf}:${row.ga}`, `${row.won}–${row.draw}–${row.lost}`) : ''}
-    <div class="cell cell--form"><dt>Forma</dt><dd>${formHtml(A.slug)}</dd></div>
-    ${n ? `<div class="cell cell--next"><dt>Najbližší zápas</dt><dd><a href="${R}${n.url}"><b>${esc(n.opponent)}</b><span>${dDay(n.date)} ${dShort(n.date)} · ${esc(n.time || '')} · ${n.home ? 'doma' : 'vonku'}</span></a></dd></div>` : ''}
+    ${lastA ? `<div class="cell cell--form cell--last"><dt>Posledný zápas</dt><dd><a href="${R}${lastA.url}"><b>${lastA.gf}:${lastA.ga}</b><span>${esc(lastA.opponent)} · ${dShort(lastA.date)}</span></a></dd></div>` : ''}
+    ${n ? `<div class="cell cell--next"><dt>${wl ? 'Po zimnej prestávke' : 'Najbližší zápas'}</dt><dd><a href="${R}${n.url}"><b>${esc(n.opponent)}</b><span>${dDay(n.date)} ${dShort(n.date)} · ${esc(n.time || '')} · ${n.home ? 'doma' : 'vonku'}</span></a></dd></div>` : ''}
   </dl>
-  ${wl ? `<p class="board-note">${wl}</p>` : ''}
+  ${wl && !n ? `<p class="board-note">${wl}</p>` : ''}
 </div></section>
 <section class="sec board"><div class="wrap board-in">
   <div>
     <h2 class="h3">Výsledky</h2>${fxList(homeRes(7), R)}
-    <h2 class="h3 h3--gap">Program</h2>${homeUp(5).length ? fxList(homeUp(5), R) : '<p>Ďalšie zápasy zatiaľ nie sú vyžrebované.</p>'}
+    <h2 class="h3 h3--gap">Program</h2>${homeUp(5, nextA).length ? fxList(homeUp(5, nextA), R) : '<p>Ďalšie zápasy zatiaľ nie sú vyžrebované.</p>'}
     ${more(`${R}zapasy/`, 'Všetky zápasy')}
   </div>
   <div>

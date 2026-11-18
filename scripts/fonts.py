@@ -7,7 +7,7 @@ from fontTools.ttLib import TTFont
 
 out_dir = Path(sys.argv[1]); out_dir.mkdir(parents=True, exist_ok=True)
 FAMILIES = {
-    'IBM Plex Mono': 'IBM+Plex+Mono:wght@500;600',
+    'JetBrains Mono': 'JetBrains+Mono:wght@500;600',
     'IBM Plex Serif': 'IBM+Plex+Serif:ital,wght@0,400;0,600;1,400',
 }
 UNICODES = (list(range(0x20, 0x7F)) + list(range(0xA0, 0x180)) + list(range(0x2000, 0x200C)) +
